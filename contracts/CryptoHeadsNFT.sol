@@ -85,7 +85,7 @@ contract CryptoHeadsNFT is ERC721URIStorage {
   }
 
 
-  function getTokenData(uint tokenID) public view returns(bool, uint, address, string memory, uint, uint, address) {
+  function getTokenData(uint tokenID) public view returns(bool, uint, address, string memory, uint, uint, address, uint) {
     CryptoHeadToken memory c = cryptoHeadTokens[tokenID];
     return (
       c.exists,
@@ -94,7 +94,8 @@ contract CryptoHeadsNFT is ERC721URIStorage {
       c.status,
       c.value,
       c.minValue,
-      c.highestBidder
+      c.highestBidder,
+      c.exRate
     );
   }
 
